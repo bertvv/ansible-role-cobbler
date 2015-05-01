@@ -1,0 +1,7 @@
+# roles/cobbler/vars/main.yml
+---
+
+cobbler_packages:
+  - cobbler
+
+cobbler_service:

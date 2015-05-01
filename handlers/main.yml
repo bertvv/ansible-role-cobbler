@@ -1,0 +1,12 @@
+# roles/cobbler/handlers/main.yml
+---
+
+- name: restart cobbler
+  service:
+    name: cobbler
+    state: restarted
+
+- name: restart firewalld
+  service:
+    name: firewalld
+    state: restarted
