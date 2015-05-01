@@ -3,10 +3,8 @@
 
 - name: restart cobbler
   service:
-    name: cobbler
+    name: cobblerd
     state: restarted
 
-- name: restart firewalld
-  service:
-    name: firewalld
-    state: restarted
+- name: sync cobbler
+  command: cobbler sync
