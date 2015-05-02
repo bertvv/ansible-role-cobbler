@@ -1,6 +1,12 @@
 # roles/cobbler/tasks/main.yml
 ---
 
+- name: Ensure EPEL repository is installed
+  yum:
+    pkg: epel-release
+    state: installed
+  tags: cobbler
+
 - name: Install packages
   yum:
     pkg: "{{ item }}"
@@ -8,9 +14,20 @@
   with_items: cobbler_packages
   tags: cobbler
 
+- name: Provide main configuration file
+  template:
+    src: etc_cobbler_settings.j2
+    dest: /etc/cobbler/settings
+  notify:
+    - restart cobbler
+    # - sync cobbler
+  tags: cobbler
+
 - name: Ensure service is started
   service:
-    name: "{{ cobbler_service }}"
+    name: "{{ item }}"
     state: started
     enabled: true
+  with_items: cobbler_services
   tags: cobbler
+

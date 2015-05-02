@@ -4,4 +4,6 @@
 cobbler_packages:
   - cobbler
 
-cobbler_service:
+cobbler_services:
+  - httpd
+  - cobblerd

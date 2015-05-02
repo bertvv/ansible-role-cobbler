@@ -1,5 +1,13 @@
 ---
 - hosts: all
   sudo: true
+  vars:
+    # password: vagrant
+    cobbler_default_password_crypted: $1$FM0ymfE5$XPxyNyil9NIxHTpcpZF3U/
+  tasks:
+    - name: stop firewall
+      service:
+        name: firewalld
+        state: stopped
   roles:
     - cobbler

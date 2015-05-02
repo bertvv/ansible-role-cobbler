@@ -11,9 +11,10 @@ No specific requirements
 ## Role Variables
 
 
-| Variable   | Required | Default | Comments (type)  |
-| :---       | :---     | :---    | :---             |
-| `role_var` | no       | -       | (scalar) PURPOSE |
+| Variable                           | Required | Default   | Comments (type)                                                                |
+| :---                               | :---     | :---      | :---                                                                           |
+| `cobbler_default_password_crypted` | no       | (cobbler) | MD-5 crypted hash containing the root password for systems set up with Cobbler |
+|                                    |          |           |                                                                                |
 
 ## Dependencies
 
