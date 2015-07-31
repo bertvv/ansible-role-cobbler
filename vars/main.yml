@@ -3,7 +3,11 @@
 
 cobbler_packages:
   - cobbler
+  - cobbler-web
+  - libsemanage-python
+  - pykickstart
 
 cobbler_services:
   - httpd
   - cobblerd
+  - rsyncd
