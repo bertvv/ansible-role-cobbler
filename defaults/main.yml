@@ -1,5 +1,6 @@
 # roles/cobbler/defaults/main.yml
 ---
 
+# Default password (cobbler). Change this!
 cobbler_default_password_crypted: $1$2wDZob5M$9vNxrNY8rwtsOEJlKmN77/
 
